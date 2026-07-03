@@ -45,7 +45,7 @@ export default async function Icon() {
             transform: "translate(-50%, -50%)",
           }}
         >
-          C
+          R
         </span>
       </div>
     ),

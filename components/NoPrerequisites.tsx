@@ -46,7 +46,7 @@ export default function NoPrerequisites() {
 
           <a
             href="#preco"
-            className="inline-block bg-accent text-primary font-bold text-[9px] tracking-[0.15em] uppercase px-3 py-1.5 hover:bg-accent/60 transition-colors lg:text-xs lg:tracking-[0.18em] lg:px-7 lg:py-2.5"
+            className="inline-block bg-accent text-primary font-bold text-[10px] tracking-[0.15em] uppercase px-3.5 py-1.5 hover:bg-accent/60 transition-colors lg:text-xs lg:tracking-[0.18em] lg:px-7 lg:py-2.5"
           >
             Clique e Matricule-se
           </a>

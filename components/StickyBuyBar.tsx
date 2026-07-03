@@ -3,19 +3,34 @@
 import { useEffect, useState } from "react";
 
 export default function StickyBuyBar() {
-  const [visible, setVisible] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
 
   useEffect(() => {
     const sentinel = document.getElementById("hero-end-sentinel");
     if (!sentinel) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.boundingClientRect.top < 0),
+      ([entry]) => setPastHero(entry.boundingClientRect.top < 0),
       { threshold: 0 }
     );
     observer.observe(sentinel);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    const footer = document.getElementById("site-footer");
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setFooterVisible(entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  const visible = pastHero && !footerVisible;
 
   return (
     <div
@@ -29,7 +44,7 @@ export default function StickyBuyBar() {
         </span>
         <a
           href="#preco"
-          className="text-center bg-accent text-primary font-bold text-[10px] tracking-[0.15em] uppercase px-4 py-2.5 rounded-full hover:bg-accent/90 transition-colors lg:text-xs lg:tracking-[0.18em] lg:px-7 lg:py-3 whitespace-nowrap"
+          className="text-center bg-accent text-primary font-bold text-[10px] tracking-[0.15em] uppercase px-3.5 py-1.5 rounded-full hover:bg-accent/90 transition-colors lg:text-xs lg:tracking-[0.18em] lg:px-7 lg:py-3 whitespace-nowrap"
         >
           Quero garantir meu acesso agora
         </a>

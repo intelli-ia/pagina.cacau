@@ -7,10 +7,10 @@ const images = Array.from({ length: 14 }, (_, i) => `/hero-capas/capa-${(i % 7) 
 
 export default function Hero() {
   return (
-    <section id="inicio" className="section-dark min-h-screen flex flex-col relative overflow-hidden">
-      {/* Background image */}
+    <section id="inicio" className="section-dark flex flex-col relative overflow-hidden lg:min-h-screen">
+      {/* Background image (desktop) */}
       <div
-        className="absolute inset-0 w-full h-full"
+        className="hidden lg:block absolute inset-0 w-full h-full"
         style={{
           backgroundImage: "url('/Frame 86.webp')",
           backgroundSize: "cover",
@@ -18,19 +18,33 @@ export default function Hero() {
           backgroundRepeat: "no-repeat",
         }}
       />
+
+      {/* Image (mobile): faixa no topo, cortada mostrando o canto direito, com degradê para o fundo. Fica atrás dos demais elementos (z-0) e se sobrepõe ao conteúdo abaixo. */}
+      <div
+        className="lg:hidden relative z-0 w-full h-[38vh] -mb-20"
+        style={{
+          backgroundImage: "url('/Frame 86.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "right center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="pointer-events-none absolute inset-x-0 -bottom-px h-1/2 bg-gradient-to-b from-transparent to-primary" />
+      </div>
+
       <div className="flex-1 grid grid-cols-1">
 
         {/* Left: Text Content */}
         <div className="flex flex-col items-start text-left justify-start gap-3 max-w-xl px-6 pt-6 pb-10 w-full lg:items-start lg:text-left lg:justify-center lg:gap-5 lg:px-8 lg:pt-24 lg:pb-20 lg:ml-[14%] lg:max-w-none lg:pr-12 relative z-10">
-          <div className="flex flex-col items-start gap-4 lg:items-start lg:gap-5">
-            <h1 className="font-serif font-bold text-accent text-[1.7rem] leading-[1.15] tracking-tight max-w-sm lg:text-[3.2rem] lg:max-w-lg">
+          <div className="flex flex-col items-center gap-4 w-full lg:items-start lg:w-auto lg:gap-5">
+            <h1 className="font-serif font-bold text-accent text-[1.7rem] leading-[1.15] tracking-tight max-w-sm text-center mx-auto lg:text-[3.2rem] lg:max-w-lg lg:text-left lg:mx-0">
               <span className="text-secondary">Construa</span>{" "}
               <span className="block">um raciocínio</span>
               <span className="block">clínico sólido.</span>
             </h1>
           </div>
 
-          <p className="font-serif font-light text-secondary/85 text-base leading-relaxed max-w-xs lg:text-xl lg:max-w-md">
+          <p className="font-serif font-light text-secondary/85 text-base leading-relaxed max-w-xs text-center mx-auto lg:text-xl lg:max-w-md lg:text-left lg:mx-0">
             Aprenda a dissecar síndromes, organizar o pensamento e chegar ao diagnóstico certo,{" "}
             <span className="block">do jeito que a medicina de verdade exige.</span>
           </p>
@@ -38,9 +52,9 @@ export default function Hero() {
           <a
             id="matricule-se"
             href="#preco"
-            className="bg-accent text-primary font-bold text-[8px] tracking-[0.15em] uppercase px-2.5 py-1 hover:bg-accent/60 transition-colors lg:self-start lg:text-[11px] lg:px-5 lg:py-2"
+            className="self-center bg-accent text-primary font-bold text-[10px] tracking-[0.15em] uppercase px-3.5 py-1.5 hover:bg-accent/60 transition-colors lg:self-start lg:text-[11px] lg:px-5 lg:py-2"
           >
-            QUERO DOMINAR O RACIOCÍNIO NO QUADRO
+            DOMINAR O RACIOCÍNIO NO QUADRO
           </a>
 
         </div>
@@ -52,7 +66,7 @@ export default function Hero() {
       <div className="relative w-full pb-10 lg:pb-16 z-10">
         <InfiniteSlider className="w-full" duration={35} gap={16}>
           {images.map((src, i) => (
-            <div key={i} className="relative flex-shrink-0 w-52 aspect-video overflow-hidden">
+            <div key={i} className="relative flex-shrink-0 w-36 aspect-video overflow-hidden lg:w-52">
               <Image
                 src={src}
                 alt={`Aula CORC ${i + 1}`}

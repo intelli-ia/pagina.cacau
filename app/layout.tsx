@@ -12,7 +12,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "C.O.R.C. — Curso Online de Raciocínio Clínico",
+  title: "Domine o Raciocínio Clínico",
   description:
     "Saia da pressão e do diabetes. Aprenda a raciocinar e conduzir casos do complexo ao simples no dia a dia com o Dr. Carlos Antônio Cacau.",
 };

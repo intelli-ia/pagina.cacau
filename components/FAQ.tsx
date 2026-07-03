@@ -80,7 +80,7 @@ export default function FAQ() {
           <a
             href="https://pay.hub.la/Bx8I7wO9zk0DmaF1OUEP"
             target="_blank"
-            className="flex-1 bg-accent text-primary font-bold text-[10px] tracking-[0.15em] uppercase py-2 px-4 text-center hover:bg-accent/60 transition-colors lg:text-xs lg:tracking-[0.18em] lg:py-5"
+            className="flex-1 bg-accent text-primary font-bold text-[10px] tracking-[0.15em] uppercase py-1.5 px-3.5 text-center hover:bg-accent/60 transition-colors lg:text-xs lg:tracking-[0.18em] lg:py-5"
           >
             Clique e Matricule-se
           </a>
