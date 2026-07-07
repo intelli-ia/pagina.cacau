@@ -19,23 +19,25 @@ export default function Hero() {
         }}
       />
 
-      {/* Image (mobile): faixa no topo, cortada mostrando o canto direito, com degradê para o fundo. Fica atrás dos demais elementos (z-0) e se sobrepõe ao conteúdo abaixo. */}
+      {/* Image (mobile): faixa no topo, cortada mostrando o canto direito, com degradê para o fundo. Posicionada absolute para crescer livremente por trás do conteúdo, sem empurrá-lo (z-0). */}
       <div
-        className="lg:hidden relative z-0 w-full h-[38vh] -mb-20"
+        className="lg:hidden absolute inset-x-0 top-0 z-0 w-full h-[50vh]"
         style={{
           backgroundImage: "url('/Frame 86.webp')",
           backgroundSize: "cover",
-          backgroundPosition: "right center",
+          backgroundPosition: "91% center",
           backgroundRepeat: "no-repeat",
         }}
       >
+        <div className="pointer-events-none absolute inset-x-0 -bottom-px h-1/2 bg-gradient-to-b from-transparent to-primary" />
+        <div className="pointer-events-none absolute inset-x-0 -bottom-px h-1/2 bg-gradient-to-b from-transparent to-primary" />
         <div className="pointer-events-none absolute inset-x-0 -bottom-px h-1/2 bg-gradient-to-b from-transparent to-primary" />
       </div>
 
       <div className="flex-1 grid grid-cols-1">
 
         {/* Left: Text Content */}
-        <div className="flex flex-col items-start text-left justify-start gap-3 max-w-xl px-6 pt-6 pb-10 w-full lg:items-start lg:text-left lg:justify-center lg:gap-5 lg:px-8 lg:pt-24 lg:pb-20 lg:ml-[14%] lg:max-w-none lg:pr-12 relative z-10">
+        <div className="flex flex-col items-start text-left justify-start gap-3 max-w-xl px-6 pt-6 pb-10 w-full mt-[calc(38vh-5rem)] lg:items-start lg:text-left lg:justify-center lg:gap-5 lg:px-8 lg:pt-24 lg:pb-20 lg:ml-[14%] lg:max-w-none lg:pr-12 lg:mt-0 relative z-10">
           <div className="flex flex-col items-center gap-4 w-full lg:items-start lg:w-auto lg:gap-5">
             <h1 className="font-serif font-bold text-accent text-[1.7rem] leading-[1.15] tracking-tight max-w-sm text-center mx-auto lg:text-[3.2rem] lg:max-w-lg lg:text-left lg:mx-0">
               <span className="text-secondary">Construa</span>{" "}
@@ -44,7 +46,7 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="font-serif font-light text-secondary/85 text-base leading-relaxed max-w-xs text-center mx-auto lg:text-xl lg:max-w-md lg:text-left lg:mx-0">
+          <p className="font-serif font-light text-secondary/85 text-sm leading-relaxed max-w-xs text-center mx-auto lg:text-xl lg:max-w-md lg:text-left lg:mx-0">
             Aprenda a dissecar síndromes, organizar o pensamento e chegar ao diagnóstico certo,{" "}
             <span className="block">do jeito que a medicina de verdade exige.</span>
           </p>
